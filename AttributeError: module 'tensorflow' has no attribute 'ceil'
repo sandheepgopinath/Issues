@@ -1,0 +1,52 @@
+Issue was faced while using ONNX Model in the below command
+> import onnx_tf.backend
+
+
+
+Error : 
+-----------------------------------------------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-2-1864abda6877> in <module>()
+      3 from PIL import Image
+      4 import numpy as np
+----> 5 import onnx_tf.backend
+      6 import tensorflow as tf
+
+~\AppData\Local\Continuum\anaconda3\lib\site-packages\onnx_tf\__init__.py in <module>()
+----> 1 from . import backend
+
+~\AppData\Local\Continuum\anaconda3\lib\site-packages\onnx_tf\backend.py in <module>()
+     27 from onnx_tf.common import get_unique_suffix
+     28 from onnx_tf.common import supports_device as common_supports_device
+---> 29 from onnx_tf.common.handler_helper import get_all_backend_handlers
+     30 from onnx_tf.pb_wrapper import OnnxNode
+     31 import onnx_tf.common as common
+
+~\AppData\Local\Continuum\anaconda3\lib\site-packages\onnx_tf\common\handler_helper.py in <module>()
+      3 from onnx import defs
+      4 
+----> 5 from onnx_tf.handlers.backend import *  # noqa
+      6 from onnx_tf.handlers.backend_handler import BackendHandler
+      7 
+
+~\AppData\Local\Continuum\anaconda3\lib\site-packages\onnx_tf\handlers\backend\ceil.py in <module>()
+      8 
+      9 @onnx_op("Ceil")
+---> 10 @tf_func(tf.ceil)
+     11 class Ceil(BasicMathMixin, BackendHandler):
+     12 
+
+AttributeError: module 'tensorflow' has no attribute 'ceil'
+
+
+
+Resolution 
+_______________________________________________________________________________________________________________________
+
+> Downgrade to version 1.1.14  >  
+
+
+
+pip install tensorflow-gpu==1.14, If using GPU
+
+pip install tensorflow==1.14, If using CPU
