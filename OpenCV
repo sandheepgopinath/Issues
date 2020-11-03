@@ -1,0 +1,16 @@
+ModuleNotFoundError: No module named 'cv2' 
+
+
+
+> pip install opencv-python==3.4.4.19
+> pip install opencv-contrib-python==3.4.4.19
+
+
+If Attribute Error: MultiTracker_create() Not Found in cv2, then
+
+> pip uninstall opencv-contrib-python
+> pip uninstall opencv-python
+> pip install opencv-python==3.4.4.19
+> pip install opencv-contrib-python==3.4.4.19
+
+
