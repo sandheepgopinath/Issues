@@ -1,0 +1,6 @@
+ONXX can be used to import and Export models easily. In this case, it was used for importing Custom Vision Compact models from customvision.ai
+
+
+
+> pip install onxx
+> pip install onnx_tf
