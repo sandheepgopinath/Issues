@@ -1,0 +1,29 @@
+'\r' still printing the output in different lines
+
+Use
+    import sys
+    
+    
+    #cursor up one line
+    sys.stdout.write('\x1b[1A')
+
+    #delete last line
+    sys.stdout.write('\x1b[2K')
+    
+    
+    
+    Tested on 26 Nov 2020
+    
+    
+    To clear output screeen completely, 
+    
+    import os
+    
+    os.system('clear') 
+    
+    Or 
+    
+    os.system('cls') for windows
+    
+    
+    
