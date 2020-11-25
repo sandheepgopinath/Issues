@@ -1,0 +1,12 @@
+Permission denied for 
+sudo echo > 1 /proc/sys/net/ipv4/ip_forward
+
+
+Resolution:
+
+Use
+
+sudo bash -c 'echo 1 > /proc/sys/net/ipv4/ip_forward'
+
+
+Verified on 25 Nov 2020
