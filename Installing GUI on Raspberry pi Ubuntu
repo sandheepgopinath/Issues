@@ -1,0 +1,54 @@
+sudo lshw
+
+cd /etc/netplan/
+
+sudo nano 50-cloud-init.yaml
+
+        
+# This file is generated from information provided by
+# the datasource.  Changes to it will not persist across an instance.
+# To disable cloud-init's network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    version: 2
+    ethernets:
+        eth0:
+            optional: true
+            dhcp4: true
+    # add wifi setup information here ...
+    wifis:
+        wlan0:
+            optional: true
+            access-points:
+                "YOUR-SSID-NAME":
+                    password: "YOUR-NETWORK-PASSWORD"
+            dhcp4: true
+
+    
+    
+Check whether there’s any error in the configuration file with the following command:
+
+        
+sudo netplan –debug try
+
+    
+If any error encounters then you can check with this command for detailed error information.
+
+        
+sudo netplan --debug generate
+
+    
+Apply the configuration file with the following command:
+
+        
+sudo netplan --debug apply
+
+    
+Finally, reboot your PI
+
+        
+sudo reboot
+
+    
+  
