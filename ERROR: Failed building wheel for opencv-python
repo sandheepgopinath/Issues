@@ -1,0 +1,20 @@
+pip3 install opencv-python
+
+  Problem with the CMake installation, aborting build. CMake executable is cmake
+  
+  ----------------------------------------
+  Failed building wheel for opencv-python
+  Running setup.py clean for opencv-python
+
+What worked for me
+
+pip3 install --upgrade pip setuptools wheel
+
+After this you still might received fallowing error error
+
+    from .cv2 import *
+ImportError: libGL.so.1: cannot open shared object file: No such file or directory
+Installing libgl solved the error for me.
+
+sudo apt update
+sudo apt install libgl1-mesa-glx
