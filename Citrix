@@ -1,0 +1,20 @@
+While opening citrix in Ubuntu, the following error is displayed
+
+
+
+
+    ERROR:
+
+    Cannot connect to "0.0.0.2 - Remote Desktop Connection"
+
+    Unknown error 1000119. Verify your connection settings and try again.
+
+
+Resolution
+
+[+] Remove cacerts and link to /etc/ssl/certs by the following commands
+cd /opt/Citrix/ICAClient/keystore/
+sudo rm -rf cacerts
+sudo ln -s /etc/ssl/certs cacerts
+
+
